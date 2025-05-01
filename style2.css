@@ -1,11 +1,31 @@
-﻿body {
-    background: linear-gradient(135deg, #ff92a5, #fdbb84);
-    font-family: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    /* Color palette */
+    --dark-teal: #394a51;
+    --sage-green: #7fa99b;
+    --cream: #fbf2d5;
+    --soft-orange: #fdc57b;
+    --text-color: #394a51;
+    --text-light: #4e6673;
+    --box-shadow: 0 8px 25px rgba(57, 74, 81, 0.15);
+    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, var(--dark-teal), var(--sage-green));
+    font-family: 'Brush Script MT', cursive;
     margin: 0;
     padding: 140px 0 120px;
     min-height: 100vh;
     box-sizing: border-box;
-    color: #2d2d2d;
+    color: var(--cream);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,15 +38,16 @@ header {
     width: 100%;
     display: flex;
     border-radius: 0 0 24px 24px;
-    background: linear-gradient(135deg, #ff92a5, #fdbb84);
-    color: #2e2e2e;
+    background: linear-gradient(135deg, var(--dark-teal), var(--sage-green));
+    color: var(--cream);
     justify-content: center;
     align-items: center;
     height: 100px;
     z-index: 1000;
     padding: 0 2rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 12px rgba(57, 74, 81, 0.2);
     box-sizing: border-box;
+    border-bottom: 2px solid rgba(251, 242, 213, 0.3);
 }
 
 .header-container {
@@ -38,31 +59,55 @@ header {
     max-width: 1200px;
     text-decoration: none;
     color: inherit;
+    transition: var(--transition);
 }
+
+    .header-container:hover {
+        transform: translateY(2px);
+    }
 
 .naslov {
     margin: 20px;
     font-weight: 500;
     font-size: 1.8rem;
+    text-shadow: 0 2px 8px rgba(57, 74, 81, 0.3);
+    transition: var(--transition);
 }
+
+    .naslov:hover {
+        color: var(--soft-orange);
+    }
 
 .gore {
     height: 60px;
     width: 60px;
     object-fit: contain;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    border: 3px solid var(--cream);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(57, 74, 81, 0.2);
 }
 
+    .gore:hover {
+        transform: scale(1.1) rotate(5deg);
+        border-color: var(--soft-orange);
+    }
+
 #map {
-    height: 400px;
-    width: 400px;
+    height: 320px;
+    width: 320px;
     max-width: 800px;
     margin: 20px auto;
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     z-index: 1;
+    border: 4px solid var(--cream);
+    transition: var(--transition);
 }
+
+    #map:hover {
+        box-shadow: 0 12px 32px rgba(57, 74, 81, 0.25);
+    }
 
 .sun-marker {
     font-size: 24px;
@@ -75,6 +120,7 @@ header {
     align-items: center;
     justify-content: center;
     pointer-events: none;
+    color: var(--soft-orange);
 }
 
 .cafe-marker {
@@ -88,9 +134,8 @@ header {
     align-items: center;
     justify-content: center;
     pointer-events: none;
+    color: var(--sage-green);
 }
-
-
 
 @keyframes pulse {
     0% {
@@ -107,18 +152,26 @@ header {
 }
 
 .control-panel {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px;
+    background: var(--cream);
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: var(--box-shadow);
     width: 90%;
     max-width: 800px;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    border: 1px solid rgba(127, 169, 155, 0.3);
+    transition: var(--transition);
 }
+
+    .control-panel:hover {
+        box-shadow: 0 8px 20px rgba(57, 74, 81, 0.2);
+    }
 
 footer {
     border-radius: 24px 24px 0 0;
-    background: #fff3f1;
-    color: #6c6c6c;
+    background: var(--cream);
+    color: var(--text-light);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,14 +183,38 @@ footer {
     width: 100%;
     left: 0;
     font-size: 0.95rem;
-    border-top: 1px solid #e4e4e4;
+    border-top: 1px solid rgba(127, 169, 155, 0.3);
+    box-shadow: 0 -5px 20px rgba(57, 74, 81, 0.1);
+    transition: var(--transition);
 }
+
+    footer:hover {
+        background: linear-gradient(to bottom, var(--cream), rgba(253, 197, 123, 0.4));
+    }
 
 .status {
     margin-top: 10px;
     font-size: 0.9rem;
-    color: #555;
+    color: var(--text-light);
 }
+
+/* Buttons or interactive elements you might add */
+.button {
+    background: var(--sage-green);
+    color: var(--cream);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+    .button:hover {
+        background: var(--soft-orange);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(253, 197, 123, 0.3);
+    }
 
 @media (max-width: 768px) {
     #map {
@@ -152,5 +229,9 @@ footer {
     .gore {
         height: 50px;
         width: 50px;
+    }
+
+    .control-panel {
+        padding: 15px;
     }
 }
