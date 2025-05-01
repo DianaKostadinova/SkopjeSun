@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skopje Sun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h2 class="naslov">Skopje Sun </h2>
+            <img class="gore" src="logoBelo.png" alt="Sun Tracker Logo" />
+        </div>
+    </header>
+
+    <div class="control-panel">
+        <div>Last updated: <span id="update-time">Just now</span></div>
+        <div class="status">Loading café data...</div>
+    </div>
+
+    <div id="map"></div>
+
+    <footer>
+        <p>Powered by OpenStreetMap & Overpass API</p>
+        <p>Real-time sun calculations</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suncalc@1.8.0/suncalc.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/suncalc/suncalc.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
