@@ -1,0 +1,1 @@
+SunSeeker is a mobile application that helps you find the sunniest cafés in Skopje at any time of day. By combining solar position calculations with a database of local cafés and their outdoor seating layouts, the app tells you exactly which cafés will have sunshine when you want to enjoy your coffee.
